@@ -1,0 +1,28 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Admin Login</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>    
+<body>
+    <center><img src="images/IIITA.png" alt="Indian Institute of Information Technology Allahabad" width="150" height="150"></center>
+    <h2>Admin Login</h2><br>    
+    <div class="login">
+	<p><%=(typeof alertMsg!='undefined')? alertMsg:''%></p>	
+    <form method="post" action="/login">    
+        <center><label><b>Email Address  
+        </b>    
+        </label>    
+        <input type="email" placeholder="Email Address" name="email_address" id="Uname" required">      
+        <br><br></center>
+        <center><label><b>Password     
+        </b>    
+        </label>    
+        <input type="password" placeholder="Password" name="password" id="Pass" required">    
+        <br><br></center>    
+        <center><button type="submit" id="log">Login Now</button>       
+        <br><br> </center>   
+    </form>     
+</div>    
+</body>    
+</html>

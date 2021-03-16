@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Login</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+	<center><img src="images/IIITA.png" alt="Indian Institute of Information Technology Allahabad" width="150" height="150"></center>
+    <h2>Student Register</h2><br>    
+    <div class="registration-form">
+	<p><%=(typeof alertMsg!='undefined')? alertMsg:''%></p>	
+    <form method="post" action="register">    
+        <center><label><b>First Name 
+        </b>    
+        </label>    
+        <input type="text" placeholder="First Name" name="first_name" id="first_name" required">      
+        <br><br></center>
+        <center><label><b>Last Name     
+        </b>    
+        </label>    
+        <input type="text" placeholder="Last Name" name="last_name" id="last_name" required">   
+        <br><br></center>
+		<center><label><b>Password     
+        </b>    
+        </label>    
+        <input type="password" placeholder="Password" name="password" id="password" required">  
+        <br><br></center>
+		<center><label><b>Email Address    
+        </b>    
+        </label>    
+        <input type="email" placeholder="Email Address" name="email_address" id="email_address" required">   
+        <br><br></center>
+		<center><label><b>Gender     
+        </b>    
+        </label>
+		<input type="radio" value="male" name="gender" id="male" required><label>Male</label>
+		<input type="radio" value="female" name="gender" id="female" required><label>Female</label>
+		<br><br></center>
+        <center><button type="submit" id="log">Student Register!</button>       
+        <br><br> </center>   
+    </form>     
+</div>   
+</body>
+</html> 
