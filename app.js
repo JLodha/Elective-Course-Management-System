@@ -13,6 +13,8 @@ var logoutRouter = require('./routes/logout-route');
 var teacherloginRouter = require('./routes/teacher-login-route');
 var teacherRegisterRouter = require('./routes/teacher-registration-route');
 var adminloginRouter = require('./routes/admin-login-route');
+var teacherElectiveRouter = require('./routes/teacher-elective-route');
+var querypageRouter = require('./routes/querypage-route');
 
 var app = express();
 
@@ -41,6 +43,8 @@ app.use('/', logoutRouter);
 app.use('/',teacherloginRouter);
 app.use('/',teacherRegisterRouter);
 app.use('/',adminloginRouter);
+app.use('/',teacherElectiveRouter);
+app.use('/',querypageRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

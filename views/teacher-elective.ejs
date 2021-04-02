@@ -1,0 +1,134 @@
+<html>
+ 
+<head>
+<center>Allocation of Electives by Faculty</center>
+ 
+<title>Elective allocation
+ 
+</title>
+ 
+<link rel="stylesheet" href="stylesheets/teacher-elective.css" type="text/css">
+ 
+<style type="text/css">
+ 
+.vid{font-family:verdana;font-style:italic;color:red;text-align:center}
+ 
+.ani{font-family:tahoma;font-style:italic;font-size:20;text-align:center;}
+ 
+font{font-family:georgia;color:blue;font-size:20}
+ 
+ul{list-style-type:circle}
+ 
+</style>
+ 
+</head>
+ 
+<body>
+ 
+<h2 class="vid" name = "XT">Indian Institute of Information Technology, Allahabad</h2>
+ 
+<br>
+ 
+<font></font><br>
+ 
+<br>
+ 
+
+ 
+<center>Table for allocating elective to respective students</center>
+<form method="post" action="/teacher-elective"> 
+   
+<table width="100%" cellspacing="2" cellpadding="2" border="5"  name ="exampleTABLE">
+<thead>
+<tr>
+
+<th>ID</th>
+ 
+<th>FIRST NAME</th>
+ 
+<th>LAST NAME</th>
+ 
+<th>ELECTIVES OFFERED 1</th>
+<th>ELECTIVES OFFERED 2</th>
+<th>ELECTIVES OFFERED 3</th>
+ 
+</tr>
+</thead> 
+<tbody>
+<%
+if(userData.length!=0){
+var i=1;
+userData.forEach(function(data){
+%>
+
+<tr>
+
+<td align="center"><%=data.id %></td>
+ 
+<td align="center"><%=data.first_name %></td>
+<td align="center"><%=data.last_name %></td>
+ 
+<!--<td align="center"><input type="checkbox"><%=data.first_elective %></td>
+<td align="center"><input type="checkbox"><%=data.second_elective %></td>
+<td align="center"><input type="checkbox"><%=data.third_elective %></td> -->
+<td align="center">
+ <select id="electives_first">
+    <option value=<%=data.first_elective %>><%=data.first_elective %></option>
+    <option value=<%=data.second_elective %>><%=data.second_elective %></option>
+    <option value=<%=data.third_elective %>><%=data.third_elective %></option>
+    </select>
+</td>
+<td align="center">
+     <select id="electives_second">
+       <option value=<%=data.first_elective %>><%=data.first_elective %></option>
+       <option value=<%=data.second_elective %>><%=data.second_elective %></option>
+        <option value=<%=data.third_elective %>><%=data.third_elective %></option>
+       </select>
+   </td>
+   <td align="center">
+    <select id="electives_third">
+        <option value=<%=data.first_elective %>><%=data.first_elective %></option>
+        <option value=<%=data.second_elective %>><%=data.second_elective %></option>
+        <option value=<%=data.third_elective %>><%=data.third_elective %></option>
+        </select>
+   </td>
+</tr>
+
+ 
+<% i++; }) %>
+<% } else { %>
+    <tr>
+        <td align="center">No Data Found</td>
+    </tr>
+<% } %>
+</tbody>
+</table>
+<br>
+<br>
+<center><button id="elect_course" type="submit">Elect Courses</button></center>  
+</form>
+
+
+
+
+<!--<script>
+    document.getElementById("elect_course").onclick = (e) => {
+        var table = document.getElementById("example");
+    var arr = [];
+    for(var i =0; i<table.rows.length; i++){
+        var row = [];
+        var r = document.getElementById(table.rows[i]);
+        for (var j =0; j<r.cells.length;j++){
+            var e = r.cells[j].innerHTML;
+            row.push(e);
+        }
+        arr.push(row);
+    }
+
+
+};
+</script> -->
+ 
+</body>
+ 
+</html>
