@@ -38,12 +38,12 @@ ul li a {
     height: 45px;
 }
 
-.home, .services, .products, .pricing, .team, .careers, .about, .contact {
+.home, .admin, .student, .teacher, .about {
     background-size: 100% 200%;
     transition: background-position 1s;
 } 
 
-.home:hover, .services:hover, .products:hover, .pricing:hover, .team:hover, .careers:hover, .about:hover, .contact:hover {
+.home:hover, .admin:hover, .student:hover, .teacher:hover, .about:hover {
     background-position: 0 100%;
     transition: all .6s ease-in;
 }
@@ -55,30 +55,30 @@ ul li a {
 } 
 .home:hover {background-color: orange;} 
 
-.services {
+.admin {
     border-bottom: 5px solid coral;
     background-image: linear-gradient(to top, coral 50%, black 50%);
 }
-.services:hover { background-color: coral;}
+.admin:hover { background-color: coral;}
 
 
-.products {
+.student {
     border-bottom: 5px solid #FE3E00;
     background-image: linear-gradient(to top, #FE3E00 50%, black 50%);
 }
-.products:hover { background-color: #FE3E00;}
+.student:hover { background-color: #FE3E00;}
 
-.pricing {
+.teacher {
     border-bottom: 5px solid #922b3e;
     background-image: linear-gradient(to top, #922b3e 50%, black 50%);
 }
-.pricing:hover { background-color: #922b3e;}
+.teacher:hover { background-color: #922b3e;}
 
-.team {
+.about {
     border-bottom: 5px solid purple;
     background-image: linear-gradient(to top, purple 50%, black 50%);
 }
-.team:hover {background-color: purple;}
+.about:hover {background-color: purple;}
 .careers {
     border-bottom: 5px solid #1C1AAF;
     background-image: linear-gradient(to top, #1C1AAF 50%, black 50%);

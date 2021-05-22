@@ -1,0 +1,333 @@
+<head>
+  <title>Admin Elective Management</title>
+</head>
+<style type="text/css">
+ 
+    /*.vid{font-family:verdana;font-style:italic;color:red;text-align:center}
+     
+    .ani{font-family:tahoma;font-style:italic;font-size:16;text-align:center;}
+     
+    font{font-family:georgia;color:blue;font-size:16}*/
+     
+    ul{list-style-type:circle}
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+      -o-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    
+    body {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-weight: 100;
+      font-size: 12px;
+      line-height: 30px;
+      color: #777;
+      background: #4CAF50;
+    }
+    
+    .container {
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+    .container1 {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      /*font-size:10;*/
+    }
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact input[type="tel"],
+    #contact input[type="url"],
+    #contact textarea,
+    #contact button[type="submit"] {
+      font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+    }
+    
+    #contact {
+      background: #F9F9F9;
+      padding: 25px;
+      margin : 20px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+    
+    #contact h3 {
+      display: block;
+      font-size: 30px;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+    
+    #contact h4 {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+    }
+    
+    fieldset {
+      border: medium none !important;
+      margin: 0 0 10px;
+      min-width: 100%;
+      padding: 0;
+      width: 100%;
+    }
+    
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact input[type="tel"],
+    #contact input[type="number"],
+    #contact textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      background: #FFF;
+      margin: 0 0 5px;
+      padding: 10px;
+    }
+    
+    #contact input[type="text"]:hover,
+    #contact input[type="email"]:hover,
+    #contact input[type="tel"]:hover,
+    #contact input[type="number"]:hover,
+    #contact textarea:hover {
+      -webkit-transition: border-color 0.3s ease-in-out;
+      -moz-transition: border-color 0.3s ease-in-out;
+      transition: border-color 0.3s ease-in-out;
+      border: 1px solid #aaa;
+    }
+    
+    #contact textarea {
+      height: 100px;
+      max-width: 100%;
+      resize: none;
+    }
+    
+    #contact button[type="submit"] {
+      cursor: pointer;
+      width: 100%;
+      border: none;
+      background: #4CAF50;
+      color: #FFF;
+      margin: 0 0 5px;
+      padding: 10px;
+      font-size: 15px;
+    }
+    
+    #contact button[type="submit"]:hover {
+      background: #43A047;
+      -webkit-transition: background 0.3s ease-in-out;
+      -moz-transition: background 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    #contact button[type="submit"]:active {
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    
+    .copyright {
+      text-align: center;
+    }
+    
+    #contact input:focus,
+    #contact textarea:focus {
+      outline: 0;
+      border: 1px solid #aaa;
+    }
+    
+    ::-webkit-input-placeholder {
+      color: #888;
+    }
+    
+    :-moz-placeholder {
+      color: #888;
+    }
+    
+    ::-moz-placeholder {
+      color: #888;
+    }
+    
+    :-ms-input-placeholder {
+      color: #888;
+    }
+
+    
+    
+nav {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: #000;
+}
+
+ul { list-style-type: none;}
+
+ul li { 
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+ }
+
+ul li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16pt;
+    text-decoration: none;
+    text-align: center;
+    padding: 12.7px 12.7px;
+    box-sizing: border-box;
+    height: 45px;
+}
+
+.home, .admin, .student, .teacher, .about {
+    background-size: 100% 200%;
+    transition: background-position 1s;
+} 
+
+.home:hover, .admin:hover, .student:hover, .teacher:hover, .about:hover {
+    background-position: 0 100%;
+    transition: all .6s ease-in;
+}
+
+.home { 
+    border-bottom: 5px solid orange;
+    background-image: linear-gradient(to top, orange 50%, black 50%);
+
+} 
+.home:hover {background-color: orange;} 
+
+.admin {
+    border-bottom: 5px solid coral;
+    background-image: linear-gradient(to top, coral 50%, black 50%);
+}
+.admin:hover { background-color: coral;}
+
+
+.student {
+    border-bottom: 5px solid #FE3E00;
+    background-image: linear-gradient(to top, #FE3E00 50%, black 50%);
+}
+.student:hover { background-color: #FE3E00;}
+
+.teacher {
+    border-bottom: 5px solid #922b3e;
+    background-image: linear-gradient(to top, #922b3e 50%, black 50%);
+}
+.teacher:hover { background-color: #922b3e;}
+
+.about {
+    border-bottom: 5px solid purple;
+    background-image: linear-gradient(to top, purple 50%, black 50%);
+}
+.about:hover {background-color: purple;}
+.careers {
+    border-bottom: 5px solid #1C1AAF;
+    background-image: linear-gradient(to top, #1C1AAF 50%, black 50%);
+}
+.careers:hover { background-color: #1C1AAF;}
+
+
+.about {
+    border-bottom: 5px solid #0066E7;
+    background-image: linear-gradient(to top, #0066E7 50%, black 50%);
+}
+.about:hover { background-color: #0066E7;}
+.contact {
+    border-bottom: 5px solid #0a8062;
+    background-image: linear-gradient(to top, #0a8062 50%, black 50%);
+}
+.contact:hover { background-color: #0a8062;}
+
+</style>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="home"><a href="/admindash">Dashboard</a></li>
+          <li class="admin"><a href="/registerteacher">Add Faculty</a></li>
+          <li class="about"><a href="/studentregister">Add Student</a></li>
+          <li class="student"><a href="/studentexcel">Add Student [Excel]</a></li>
+          <li class="teacher"><a href="/addelective">Add Elective</a></li>
+          <li class="student"><a href="/adminelective">Manage Elective</a></li>
+          <li class="about"><a href="/selectstudent">Select Student</a></li>
+          <li class="admin"><a href="/querypageadmin">Answer Query</a></li>
+          <li class="home"><a href="/logout">Logout</a></li>
+      </ul> 
+      </nav>
+    </header> >
+    <div class="container1">
+    
+    <!-- <form id="contact" action="/admin-elective-change" method="post">
+        <center><h3>EDIT ELECTIVE</h3></center>
+        <h4><i><b></b>Edit any of the field to change the corresponding entry of that elective.</b></i></h4>
+        <h4><i><b></b>If you wish to remove any elective then leave the Elective ID field empty.</b></i></h4>
+    <table id="contact" width="100%" cellspacing="2" cellpadding="2" border="5">
+    <tr>
+    <th>Elective ID</th> 
+    <th>Elective Name</th>
+    <th>Elective Code</th>
+    <th>Semester</th>
+    <th>Faculty</th>
+    <th>Minimum GPA</th>
+     
+    </tr>
+
+    <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+    %>
+     
+    <tr>
+     
+    <td><input type="text" name="courseId" align="center" value=<%=data.courseId %>></td>
+    <td><input type="text" name="courseName" align="center" value=<%=data.courseName %>></td>
+    <td><input type="text" name="courseCode" align="center" value=<%=data.courseCode %>></td>
+    <td><input type="text" name="semester" align="center" value=<%=data.semester %>></td>
+    <td><input type="text" name="faculty" align="center" value=<%=data.faculty %>></td>
+    <td><input type="text" name="minGPA" align="center" value=<%=data.minGPA %>></td>
+    
+    </tr>
+
+    <% i++; }) } %>
+    </table>
+    <button name="edit-elective" type="submit" id="contact-submit" data-submit="...Sending">Make Changes</button>
+    </form>
+     </div>
+    </body> -->
+    <div class="container">  
+      <form id="contact" action="/admin-elective-add" method="post">
+        <center><h3>ADD ELECTIVE</h3></center>
+        <h4><i><b></b>Please fill all the following fields.</b></i></h4>
+        <fieldset>
+          <input placeholder="Elective ID" type="number" tabindex="1" name="addcourseId" required autofocus>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Elective Name" type="text" tabindex="2" name="addcourseName" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Elective Code" type="text" tabindex="3" name="addcourseCode" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Semester" type="number" tabindex="4" name="addsemester" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Faculty" type="text" tabindex="4" name="addFaculty" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Minimum GPA" type="number" tabindex="4" name="addminGPA" required>
+        </fieldset>
+        <button name="edit-elective" type="submit" id="contact-submit" data-submit="...Sending">Add Elective</button>
+      </form>
+    </div>
+  </body>

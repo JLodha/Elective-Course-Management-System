@@ -11,14 +11,13 @@ router.post('/registerteacher', function(req, res, next) {
     inputData ={
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        email_address: req.body.email_address,
+        username: req.body.username,
         gender: req.body.gender,
         password: req.body.password,
-        // confirm_password: req.body.confirm_password
     }
 // check unique email address
-var sql='SELECT * FROM registration_teacher WHERE email_address =?';
-db.query(sql, [inputData.email_address] ,function (err, data, fields) {
+var sql='SELECT * FROM registration_teacher WHERE username =?';
+db.query(sql, [inputData.username] ,function (err, data, fields) {
  if(err) throw err
  if(data.length>1){
      var msg = inputData.email_address+ "was already exist";

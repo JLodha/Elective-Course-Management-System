@@ -5,26 +5,33 @@
   <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
 <style type="text/css">
   @import url('https://fonts.googleapis.com/css?family=Hind:300,400');
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Hind', sans-serif;
   background: #fff;
   color: #4d5974;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+
   min-height: 100vh;
 }
+
 .container {
   margin: 0 auto;
   padding: 4rem;
@@ -54,14 +61,17 @@ h3 {
   font-weight: 400;
   border-bottom: 1px solid #e5e5e5;
 }
+
 .accordion a:hover,
 .accordion a:hover::after {
   cursor: pointer;
   color: #ff5353;
 }
+
 .accordion a:hover::after {
   border: 1px solid #ff5353;
 }
+
 .accordion a.active {
   color: #ff5353;
   border-bottom: 1px solid #ff5353;
@@ -83,12 +93,14 @@ h3 {
   border: 1px solid #7288a2;
   text-align: center;
 }
+
 .accordion a.active::after {
   font-family: 'Ionicons';
   content: '\f209';
   color: #ff5353;
   border: 1px solid #ff5353;
 }
+
 .accordion .content {
   opacity: 0;
   padding: 0 1rem;
@@ -100,10 +112,12 @@ h3 {
   -o-transition: all 0.2s ease 0.15s;
   transition: all 0.2s ease 0.15s;
 }
+
 .accordion .content p {
   font-size: 1rem;
   font-weight: 300;
 }
+
 .accordion .content.active {
   opacity: 1;
   padding: 1rem;
@@ -112,10 +126,116 @@ h3 {
   -o-transition: all 0.35s ease 0.15s;
   transition: all 0.35s ease 0.15s;
 }
-</style>
 
+nav {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: #000;
+}
+
+ul { list-style-type: none;}
+
+ul li { 
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+ }
+
+ul li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16pt;
+    text-decoration: none;
+    text-align: center;
+    padding: 12.7px 12.7px;
+    box-sizing: border-box;
+    height: 45px;
+}
+
+.home, .admin, .student, .teacher, .about {
+    background-size: 100% 200%;
+    transition: background-position 1s;
+} 
+
+.home:hover, .admin:hover, .student:hover, .teacher:hover, .about:hover {
+    background-position: 0 100%;
+    transition: all .6s ease-in;
+}
+
+.home { 
+    border-bottom: 5px solid orange;
+    background-image: linear-gradient(to top, orange 50%, black 50%);
+
+} 
+.home:hover {background-color: orange;} 
+
+.admin {
+    border-bottom: 5px solid coral;
+    background-image: linear-gradient(to top, coral 50%, black 50%);
+}
+.admin:hover { background-color: coral;}
+
+
+.student {
+    border-bottom: 5px solid #FE3E00;
+    background-image: linear-gradient(to top, #FE3E00 50%, black 50%);
+}
+.student:hover { background-color: #FE3E00;}
+
+.teacher {
+    border-bottom: 5px solid #922b3e;
+    background-image: linear-gradient(to top, #922b3e 50%, black 50%);
+}
+.teacher:hover { background-color: #922b3e;}
+
+.about {
+    border-bottom: 5px solid purple;
+    background-image: linear-gradient(to top, purple 50%, black 50%);
+}
+.about:hover {background-color: purple;}
+.careers {
+    border-bottom: 5px solid #1C1AAF;
+    background-image: linear-gradient(to top, #1C1AAF 50%, black 50%);
+}
+.careers:hover { background-color: #1C1AAF;}
+
+
+.about {
+    border-bottom: 5px solid #0066E7;
+    background-image: linear-gradient(to top, #0066E7 50%, black 50%);
+}
+.about:hover { background-color: #0066E7;}
+.contact {
+    border-bottom: 5px solid #0a8062;
+    background-image: linear-gradient(to top, #0a8062 50%, black 50%);
+}
+.contact:hover { background-color: #0a8062;}
+
+
+</style>
+<script>
+  function confirmSubmit()
+  {
+      // if(confirm("Are you sure you wish to continue?") == true){
+        document.getelementById("myForm").submit();
+      // } 
+  }
+</script>
 </head>
 <body>
+  <header>
+    <nav>
+        <ul>
+            <li class="home"><a href="/studentdash">Dashboard</a></li>
+            <li class="teacher"><a href="/studenteditprofile">Edit Profile</a></li>
+            <li class="about"><a href="/studentelective">Select Elective</a></li>
+            <li class="admin"><a href="/querypage">Ask Query</a></li>
+            <li class="home"><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+  </header>
  
 <div class="container">
  
@@ -149,12 +269,13 @@ h3 {
     <div class="accordion-item">
       <!-- <a> <%=newListItem %> </a> -->
     <%  for (var i = 0 ; i < newListItem.length ; i++){   %>
-        <a><%=newListItem[i] %></a>
+        <a><%=newListItem[i].question %></a>
         <div class="content">
-          <p>Contact administration at admin@iiita.ac.in for any other application related query or compatibility.</p>
+          <p><%=newListItem[i].answer %></p>
         </div>
    <%   }      %> 
     </div>
+    <br><br>
     <!--<div class="accordion-item">
       <a>.......................................</a>
       <div class="content">
@@ -162,9 +283,19 @@ h3 {
       </div>
     </div>
   </div> -->
-  <form action="/querypage" method = "post" >
-  <input type="text" name = newitem >
-  <button type="submit" name="button" >Ask Question</button>
+  <form action="/querypage" method="post">
+    <button type="submit" style="cursor: pointer;
+    border: none;
+    background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;" name = "downloadQuery" value="downloadQuery">Download queries</button>
+  </form>
+  <br>
+  <form id="myForm" action="/querypage" method = "post" >
+  <textarea style="font-size: 20px;" rows="4" cols="70" type="text" name = "newitem" id="newitem"></textarea>
+  <button style="background-color: green;color:white;padding: 12px 28px;font-size: 24px;margin-top: 10px;" type="button" name="button" onclick="if(document.getElementById('newitem').value.trim()!=''){if(confirm('Are you sure you wish to continue?'))document.getElementById('myForm').submit();}else{alert('Empty Question Cannot be asked')}" >Ask Question</button>
 </form>
   <!-- <button type="button">Answer Question</button> -->
   

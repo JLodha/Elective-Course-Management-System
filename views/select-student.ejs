@@ -1,0 +1,482 @@
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Select Student</title>
+  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css?family=Hind:300,400');
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind', sans-serif;
+  background: #4CAF50;
+  color: #4d5974;
+
+  min-height: 100vh;
+}
+.container {
+  margin: 0 auto;
+  width: 48rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  color: #373d51;
+  padding: 1.3rem;
+  margin: 0;
+}
+.accordion a {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion a:hover,
+.accordion a:hover::after {
+  cursor: pointer;
+  color: #ff5353;
+}
+.accordion a:hover::after {
+  border: 1px solid #ff5353;
+}
+.accordion a.active {
+  color: #ff5353;
+  border-bottom: 1px solid #ff5353;
+}
+.accordion a::after {
+  font-family: 'Ionicons';
+  content: '\f218';
+  position: absolute;
+  float: right;
+  right: 1rem;
+  font-size: 1rem;
+  color: #7288a2;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #7288a2;
+  text-align: center;
+}
+.accordion a.active::after {
+  font-family: 'Ionicons';
+  content: '\f209';
+  color: #ff5353;
+  border: 1px solid #ff5353;
+}
+.accordion .content {
+  opacity: 0;
+  padding: 0 1rem;
+  max-height: 0;
+  border-bottom: 1px solid #e5e5e5;
+  overflow: hidden;
+  clear: both;
+  -webkit-transition: all 0.2s ease 0.15s;
+  -o-transition: all 0.2s ease 0.15s;
+  transition: all 0.2s ease 0.15s;
+}
+.accordion .content p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.accordion .content.active {
+  opacity: 1;
+  padding: 1rem;
+  max-height: 100%;
+  -webkit-transition: all 0.35s ease 0.15s;
+  -o-transition: all 0.35s ease 0.15s;
+  transition: all 0.35s ease 0.15s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+ul li {
+  border: 1px solid #ddd;
+  margin-top: -1px;  //Prevent double borders 
+  background-color: #f6f6f6;
+  padding: 12px;
+}
+*/
+nav {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: #000;
+}
+
+ul li { 
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+ }
+
+ul li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16pt;
+    text-decoration: none;
+    text-align: center;
+    padding: 12.7px 12.7px;
+    box-sizing: border-box;
+    height: 45px;
+}
+
+.home, .admin, .student, .teacher, .about {
+    background-size: 100% 200%;
+    transition: background-position 1s;
+} 
+
+.home:hover, .admin:hover, .student:hover, .teacher:hover, .about:hover {
+    background-position: 0 100%;
+    transition: all .6s ease-in;
+}
+
+.home { 
+    border-bottom: 5px solid orange;
+    background-image: linear-gradient(to top, orange 50%, black 50%);
+
+} 
+.home:hover {background-color: orange;} 
+
+.admin {
+    border-bottom: 5px solid coral;
+    background-image: linear-gradient(to top, coral 50%, black 50%);
+}
+.admin:hover { background-color: coral;}
+
+
+.student {
+    border-bottom: 5px solid #FE3E00;
+    background-image: linear-gradient(to top, #FE3E00 50%, black 50%);
+}
+.student:hover { background-color: #FE3E00;}
+
+.teacher {
+    border-bottom: 5px solid #922b3e;
+    background-image: linear-gradient(to top, #922b3e 50%, black 50%);
+}
+.teacher:hover { background-color: #922b3e;}
+
+.about {
+    border-bottom: 5px solid purple;
+    background-image: linear-gradient(to top, purple 50%, black 50%);
+}
+.about:hover {background-color: purple;}
+.careers {
+    border-bottom: 5px solid #1C1AAF;
+    background-image: linear-gradient(to top, #1C1AAF 50%, black 50%);
+}
+.careers:hover { background-color: #1C1AAF;}
+
+
+.about {
+    border-bottom: 5px solid #0066E7;
+    background-image: linear-gradient(to top, #0066E7 50%, black 50%);
+}
+.about:hover { background-color: #0066E7;}
+.contact {
+    border-bottom: 5px solid #0a8062;
+    background-image: linear-gradient(to top, #0a8062 50%, black 50%);
+}
+.contact:hover { background-color: #0a8062;}
+
+#contact {
+    background: #F9F9F9;
+    padding: 25px;
+    margin : 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+  
+  #contact h3 {
+    display: block;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  
+  #contact h4 {
+    margin: 5px 0 15px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  #contact button[type="button"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+  #contact1 {
+    background: #ffffff;
+    padding: 10px;
+    /*margin: 150px 0; */
+    color: #000000;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    position:absolute; 
+    left: 0px; top:100px;
+  }
+  
+  #contact1 button[type="submit1"] {
+    font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+  }
+  #contact1 button[type="submit1"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: hsl(56, 100%, 54%);
+    color: #000000	;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .row {
+margin-left:-5px;
+margin-right:-5px;
+}
+
+.column {
+float: left;
+width: 50%;
+
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+</style>
+
+<script>
+  function confirmSubmit()
+  {
+  var agree=confirm("Are you sure you wish to continue?");
+  if (agree)
+     return true ;
+  else
+    return false ;
+  }
+  function myFunction(idx, n){
+    
+    for(var i=0;i<n;i++){
+      var id = ""+i;
+      var obj = document.getElementById(id);
+      obj.style.display = "none";
+      id = ""+(i+1000000);
+      obj = document.getElementById(id);
+      obj.style.display = "none";
+    }
+    var id = ""+idx;
+    var obj = document.getElementById(id);
+    obj.style.display = "block";
+    id = (idx+1000000);
+    id = ""+id;
+    obj = document.getElementById(id);
+    obj.style.display = "block";
+  }
+</script>
+</head>
+<body>
+  <% if(status=='admin'){ %>
+  <header>
+    <nav>
+        <ul>
+          <li class="home"><a href="/admindash">Dashboard</a></li>
+          <li class="admin"><a href="/registerteacher">Add Faculty</a></li>
+          <li class="about"><a href="/studentregister">Add Student</a></li>
+          <li class="student"><a href="/studentexcel">Add Student [Excel]</a></li>
+          <li class="teacher"><a href="/addelective">Add Elective</a></li>
+          <li class="student"><a href="/adminelective">Manage Elective</a></li>
+          <li class="about"><a href="/selectstudent">Select Student</a></li>
+          <li class="admin"><a href="/querypageadmin">Answer Query</a></li>
+          <li class="home"><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+  </header> 
+  <% }else{ %>
+    <% include teacher-header.ejs %>
+    <% } %>
+ 
+<div class="container">
+  
+  <div id="contact1" >
+    <center><h4><b>Electives</b></h4></center> 
+    <fieldset>
+    <% for(var i=0; i<prevItemList.length; i++) { %>    
+      <button name="submit1" type="submit1" class="btn btn-primary" value=<%= i %> onclick='myFunction(<%= i %>, <%= prevItemList.length%>)'> <%=prevItemList[i].courseName %></button>
+      <br> 
+    <% } %>        
+    </fieldset>
+  </div>     
+  
+
+  
+  <div class = "accordion">
+  <div class="container" id ="contact">  
+    <form>
+    <% for(var i=0 ;i<prevItemList.length; i++){ %>
+      <% var id = i; %>
+      <div id = <%= id %> style="display:none">
+          <p>
+            <font size="+2" style="color:red;"> <b>Course Details: </b></font>
+            <br>  
+            <b>Course Name :</b> <%= prevItemList[i].courseName %>  
+            <br>
+            <b>Course ID :</b><%= prevItemList[i].courseCode %>
+            <br>
+            <b>Required Min GPA :</b><%= prevItemList[i].minGPA %>
+            <br>
+            <b>Semester :</b><%= prevItemList[i].semester %>
+            <br>
+            <br>
+            <font size="+2" style="color:red;"> <b>Previously Selected Students</b></font>
+            <br>
+            <!-- <h2 style="color:red">Previously Selected Students</h2> -->
+            <table border = "1">
+              <tr>
+                <th scope="col">#</td>
+                <th scope="col">Name</td>
+                <th scope="col" >Enrollment Number</td>
+                <th scope="col" >GPA</td>
+              </tr>
+              <% for(var j=0; j<prevStudentList[i].length; j++){ %>
+                <tr>
+                  <td><%= (j+1) %></td>
+                  <td><%=prevStudentList[i][j].first_name%> <%=prevStudentList[i][j].last_name%></td>
+                  <td><%=prevStudentList[i][j].rollNumber %></td>
+                  <td><%=prevStudentList[i][j].GPA %></td>
+                </tr>
+              <% } %>
+            </table>
+            <br>
+            <% if(prevStudentList[i].length > 0) { %>
+              <form action="/downloadStudents" method="post" >
+                <button type="submit" name=dwnld value = <%= i %>  >Click Here To Download Previously Seleted Students</button>
+              </form>
+            <% } %>
+            <br>
+          </p>
+      </div>
+    <% } %>
+    </form>
+  <hr>
+  <br>
+    <% for(var i=0 ;i<itemList.length; i++){ %>
+      <% var id = i+1000000; %>
+      <div id = <%= id %> style="display:none">
+        <p>
+            <font size="+2" style="color:red;"> <b>Students Who Opted This Course :</b></font>
+            <br>
+          <!-- <h2 style="color:red">Students Who Opted This Course :</h2> -->
+          <form method="post" action="/selectstudent" >
+            <table border = "1">
+                <tr>
+                  <th scope="col">#</td>
+                  <th scope="col">Name</td>
+                  <th scope="col" >Enrollment Number</td>
+                  <th scope="col" >GPA</td>
+                  <th scope="col" >Select</td>
+                </tr>
+                <% for(var j=0; j<studentList[i].length; j++){ %>
+                  <tr>
+                    <td><%= (j+1) %></td>
+                    <td><%=studentList[i][j].first_name%> <%=studentList[i][j].last_name%></td>
+                    <td><%=studentList[i][j].rollNumber %></td>
+                    <td><%=studentList[i][j].GPA %></td>
+                    <td><input type="checkbox" name=chk value= <%= j %> ></td>
+                  </tr>
+                <% } %>
+            </table>
+            <br>
+            <% if(studentList[i].length > 0){ %>
+              <button style="cursor: pointer;
+              border: none;
+              background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+              color: #FFF;
+              margin: 0 0 5px;
+              padding: 10px;
+              font-size: 15px;" type="submit" id="log" name="courseIndex" value= <%=i%> onclick="return  confirmSubmit()" >Elect Students</button> 
+            <% } else{ %>
+              <font size="+2">No Student Opted This Course </font>
+            <% } %>
+            
+          </form> 
+          <% if(studentList[i].length > 0) { %>
+            <form action="/downloadAppliedStudents" method="post">
+              <button name=dwnld value = <%= i %> type="submit" >Click Here To Download List of All Students</button>
+            </form>
+          <% } %>
+        </p>
+      </div>
+    <% } %>
+</div>
+</div>
+ 
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+<script type="text/javascript">
+	const items = document.querySelectorAll(".accordion a");
+
+function toggleAccordion(){
+  this.classList.toggle('active');
+  this.nextElementSibling.classList.toggle('active');
+}
+
+items.forEach(item => item.addEventListener('click', toggleAccordion));
+</script>
+<!-- <script  src="function.js"></script> -->
+ 
+</body>
+</html>

@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var db=require('../database');
+
 // to display registration form 
 router.get('/studentregister', function(req, res, next) {
   res.render('student-registration');
 });
+
 // to store user input detail on post request
 router.post('/studentregister', function(req, res, next) {
     
@@ -14,27 +16,25 @@ router.post('/studentregister', function(req, res, next) {
         email_address: req.body.email_address,
         gender: req.body.gender,
         password: req.body.password,
-        // confirm_password: req.body.confirm_password
+        semester : req.body.semester,
+        GPA : req.body.GPA,
+        rollNumber : req.body.rollNumber,
     }
-// check unique email address
-var sql='SELECT * FROM registration WHERE email_address =?';
-db.query(sql, [inputData.email_address] ,function (err, data, fields) {
- if(err) throw err
- if(data.length>1){
-     var msg = inputData.email_address+ "was already exist";
-//  }else if(inputData.confirm_password != inputData.password){
-//     var msg ="Password & Confirm Password is not Matched";
-}else{
-     
-    // save users data into database
-    var sql = 'INSERT INTO registration SET ?';
-   db.query(sql, inputData, function (err, data) {
-      if (err) throw err;
-           });
-  var msg ="Your are successfully registered";
- }
- res.render('student-registration',{alertMsg:msg});
-})
-     
+
+    // check unique Roll Number
+    var sql='SELECT * FROM student WHERE rollNumber =?';
+    db.query(sql, [inputData.rollNumber] ,function (err, data, fields) {
+    if(err) throw err
+    if(data.length > 0){
+        var msg = inputData.rollNumber+ " already exists";
+    }else{ 
+        var sql = 'INSERT INTO student SET ?';
+        db.query(sql, inputData, function (err, data) {
+            if (err) throw err;
+        });
+        var msg ="Your are successfully registered";
+    }
+    res.render('student-registration',{alertMsg:msg});
+    });
 });
 module.exports = router;

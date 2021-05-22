@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html> 
+
+<style type="text/css">
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+  background: #4CAF50;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="number"],
+#contact input[type="password"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="number"],
+#contact input[type="password"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="number"]:hover,
+#contact input[type="password"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: #000;
+}
+
+ul { list-style-type: none;}
+
+ul li { 
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+ }
+
+ul li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16pt;
+    text-decoration: none;
+    text-align: center;
+    padding: 12.7px 12.7px;
+    box-sizing: border-box;
+    height: 45px;
+}
+
+.home, .admin, .student, .teacher, .about {
+    background-size: 100% 200%;
+    transition: background-position 1s;
+} 
+
+.home:hover, .admin:hover, .student:hover, .teacher:hover, .about:hover {
+    background-position: 0 100%;
+    transition: all .6s ease-in;
+}
+
+.home { 
+    border-bottom: 5px solid orange;
+    background-image: linear-gradient(to top, orange 50%, black 50%);
+
+} 
+.home:hover {background-color: orange;} 
+
+.admin {
+    border-bottom: 5px solid coral;
+    background-image: linear-gradient(to top, coral 50%, black 50%);
+}
+.admin:hover { background-color: coral;}
+
+
+.student {
+    border-bottom: 5px solid #FE3E00;
+    background-image: linear-gradient(to top, #FE3E00 50%, black 50%);
+}
+.student:hover { background-color: #FE3E00;}
+
+.teacher {
+    border-bottom: 5px solid #922b3e;
+    background-image: linear-gradient(to top, #922b3e 50%, black 50%);
+}
+.teacher:hover { background-color: #922b3e;}
+
+.about {
+    border-bottom: 5px solid purple;
+    background-image: linear-gradient(to top, purple 50%, black 50%);
+}
+.about:hover {background-color: purple;}
+.careers {
+    border-bottom: 5px solid #1C1AAF;
+    background-image: linear-gradient(to top, #1C1AAF 50%, black 50%);
+}
+.careers:hover { background-color: #1C1AAF;}
+
+
+.about {
+    border-bottom: 5px solid #0066E7;
+    background-image: linear-gradient(to top, #0066E7 50%, black 50%);
+}
+.about:hover { background-color: #0066E7;}
+.contact {
+    border-bottom: 5px solid #0a8062;
+    background-image: linear-gradient(to top, #0a8062 50%, black 50%);
+}
+.contact:hover { background-color: #0a8062;}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+</style>
+<script type="text/javascript">
+  function getConfirmation() {
+   var retVal = confirm("Do you want to continue ?");
+   if( retVal == true ) {
+      document.flag=1;
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Update</button>
+      return true;
+   } else {
+      document.flag=0;
+      return false;
+   }
+}
+</script>
+
+<script LANGUAGE="JavaScript">
+  function confirmSubmit()
+  {
+  var agree=confirm("Are you sure you wish to continue?");
+  if (agree)
+   return true ;
+  else
+   return false ;
+  }
+</script>
+
+<header>
+  <nav>
+      <ul>
+          <li class="home"><a href="/studentdash">Dashboard</a></li>
+          <li class="teacher"><a href="/studenteditprofile">Edit Profile</a></li>
+          <li class="about"><a href="/studentelective">Select Elective</a></li>
+          <li class="admin"><a href="/querypage">Ask Query</a></li>
+          <li class="home"><a href="/logout">Logout</a></li>
+      </ul>
+  </nav>
+</header>
+<div class="container">  
+  <!-- <div class="container">   -->
+    <form id="contact" action="/studenteditprofile" method="post">
+  
+   <% if(userData.linear == 0 ) {%>
+      <p>User Doesn't exist</p>
+
+   <% } else{ %>
+      <% var data = userData[0] %>
+      <h3>Update Student Profile</h3>
+  
+      <h7>Roll Number</h7>
+      <fieldset>
+        <input type="text" tabindex="1" name="rollno" value=<%=data.rollNumber %> readonly>
+      </fieldset>
+      <h7>First Name</h7>
+      <fieldset>
+        <input type="text" tabindex="2" name="fname" value=<%=data.first_name %> readonly>
+      </fieldset>
+      <h7>Last Name</h7>
+      <fieldset>
+        <input type="text" tabindex="3" name="lname" value=<%=data.last_name %> readonly>
+      </fieldset>
+
+      <h7>GPA</h7>
+      <fieldset>
+        <input type="number" tabindex="4" name="gpa" value=<%=data.GPA %> readonly>
+      </fieldset>
+      <h7>Semester</h7>
+    <fieldset>
+      <input type="number" tabindex="5" name="semester" value=<%=data.semester %> readonly>
+    </fieldset>
+
+      <h7>Gender</h7>
+      <fieldset>
+        <input type="text" tabindex="6" name="gender" value=<%=data.gender %> readonly>
+      </fieldset>
+      
+      <h7>Email</h7>
+      <fieldset>
+        <input type="email" tabindex="7" name="email" value=<%=data.email_address %> >
+      </fieldset>
+
+      <h7>Contact Number</h7>
+      <fieldset>
+        <input type="number" tabindex="8" name="cno" value=<%=data.contactno %> >
+      </fieldset>
+
+      <h7>Hostel No.</h7>
+      <fieldset>
+        <input type="number" tabindex="9" name="hno" value=<%=data.hostelno %> >
+      </fieldset>
+
+      <h7>Room No.</h7>
+      <fieldset>
+        <input type="number" tabindex="10" name="rno" value=<%=data.roomno %>>
+      </fieldset>
+
+      <hr>
+      <h7><b>New Password</b></h7>
+      <p><i>If you do not wish to change then leave this field empty</i></p>
+      <fieldset>
+        <input type="password" tabindex="11" name="newpwd" >
+      </fieldset>
+      <h7><b>Current Password</b></h7>
+      <p><i>Enter your current password to confirm the changes.</i></p>
+      <fieldset>
+        <input type="password" tabindex="12" name="currpwd" >
+      </fieldset>
+      <fieldset>
+        
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" onclick="return confirmSubmit()">Update</button>
+
+      </fieldset>
+  </form>
+   <% } %>
+
+</div>
+</html>

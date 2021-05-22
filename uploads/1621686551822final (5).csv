@@ -1,0 +1,7 @@
+id,rollNumber,first_name,last_name,gender,email_address,semester,password,GPA,hostelno,roomno,contactno
+226,IIT2019130,Prince,Kumar,male,iit2019130@iiita.ac.in,1,pass,9.33,5,5244,
+227,IIT2019134,Janit,Lodha,male,iit2019134@iiita.ac.in,1,pass,9,,,
+228,IIT2019136,Souvik,Patra,male,iit2019136@iiita.ac.in,1,pass,8.9,,,
+229,IIT2019143,Animesh,Choudhury,male,iit2019143@iiita.ac.in,1,pass,9,,,9875677574
+230,IIT2019098,Shubham,Kumar,male,iit@gma.com,1,qwer,9,,,
+232,iit2019099,ghi,kla,male,iit2@gma.com,2,asda,7.4,,,

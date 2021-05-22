@@ -6,15 +6,18 @@ router.get('/teacherlogin', function(req, res, next) {
   res.render('teacher-login');
 });
 router.post('/teacherlogin', function(req, res){
-    var emailAddress = req.body.email_address;
+    var username = req.body.username;
     var password = req.body.password;
-    var sql='SELECT * FROM registration_teacher WHERE email_address =? AND password =?';
-    db.query(sql, [emailAddress, password], function (err, data, fields) {
+    var sql='SELECT * FROM registration_teacher WHERE username =? AND password =?';
+    db.query(sql, [username, password], function (err, data, fields) {
         if(err) throw err
         if(data.length>0){
             req.session.loggedinUser= true;
-            req.session.emailAddress= emailAddress;
-            res.redirect('/dashboard');
+            req.session.username= username;
+            req.session.isStudent = false;
+            req.session.isfaculty = true;
+            req.session.isAdmin = false;
+            res.redirect('/teacherdash');
         }else{
             res.render('teacher-login',{alertMsg:"Your Email Address or password is wrong"});
         }

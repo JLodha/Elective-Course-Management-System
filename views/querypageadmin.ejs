@@ -1,0 +1,304 @@
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Query Page</title>
+  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+<style type="text/css">
+  @import url(https://fonts.googleapis.com/css?family=Hind:300,400);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind', sans-serif;
+  background: #fff;
+  color: #4d5974;
+  min-height: 100vh;
+}
+.container {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 48rem;
+  position : relative;
+}
+h3 {
+  font-size: 1.75rem;
+  color: #373d51;
+  padding: 1.3rem;
+  margin: 0;
+}
+.accordion a {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion a:hover,
+.accordion a:hover::after {
+  cursor: pointer;
+  color: #ff5353;
+}
+.accordion a:hover::after {
+  border: 1px solid #ff5353;
+}
+.accordion a.active {
+  color: #ff5353;
+  border-bottom: 1px solid #ff5353;
+}
+.accordion a::after {
+  font-family: 'Ionicons';
+  content: '\f218';
+  position: absolute;
+  float: right;
+  right: 1rem;
+  font-size: 1rem;
+  color: #7288a2;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #7288a2;
+  text-align: center;
+}
+.accordion a.active::after {
+  font-family: 'Ionicons';
+  content: '\f209';
+  color: #ff5353;
+  border: 1px solid #ff5353;
+}
+.accordion .content {
+  opacity: 0;
+  padding: 0 1rem;
+  max-height: 0;
+  border-bottom: 1px solid #e5e5e5;
+  overflow: hidden;
+  clear: both;
+  -webkit-transition: all 0.2s ease 0.15s;
+  -o-transition: all 0.2s ease 0.15s;
+  transition: all 0.2s ease 0.15s;
+}
+.accordion .content p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.accordion .content.active {
+  opacity: 1;
+  padding: 1rem;
+  max-height: 100%;
+  -webkit-transition: all 0.35s ease 0.15s;
+  -o-transition: all 0.35s ease 0.15s;
+  transition: all 0.35s ease 0.15s;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: #000;
+}
+
+ul { list-style-type: none;}
+
+ul li { 
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+ }
+
+ul li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16pt;
+    text-decoration: none;
+    text-align: center;
+    padding: 12.7px 12.7px;
+    box-sizing: border-box;
+    height: 45px;
+}
+
+.home, .admin, .student, .teacher, .about {
+    background-size: 100% 200%;
+    transition: background-position 1s;
+} 
+
+.home:hover, .admin:hover, .student:hover, .teacher:hover, .about:hover {
+    background-position: 0 100%;
+    transition: all .6s ease-in;
+}
+
+.home { 
+    border-bottom: 5px solid orange;
+    background-image: linear-gradient(to top, orange 50%, black 50%);
+
+} 
+.home:hover {background-color: orange;} 
+
+.admin {
+    border-bottom: 5px solid coral;
+    background-image: linear-gradient(to top, coral 50%, black 50%);
+}
+.admin:hover { background-color: coral;}
+
+
+.student {
+    border-bottom: 5px solid #FE3E00;
+    background-image: linear-gradient(to top, #FE3E00 50%, black 50%);
+}
+.student:hover { background-color: #FE3E00;}
+
+.teacher {
+    border-bottom: 5px solid #922b3e;
+    background-image: linear-gradient(to top, #922b3e 50%, black 50%);
+}
+.teacher:hover { background-color: #922b3e;}
+
+.about {
+    border-bottom: 5px solid purple;
+    background-image: linear-gradient(to top, purple 50%, black 50%);
+}
+.about:hover {background-color: purple;}
+.careers {
+    border-bottom: 5px solid #1C1AAF;
+    background-image: linear-gradient(to top, #1C1AAF 50%, black 50%);
+}
+.careers:hover { background-color: #1C1AAF;}
+
+
+.about {
+    border-bottom: 5px solid #0066E7;
+    background-image: linear-gradient(to top, #0066E7 50%, black 50%);
+}
+.about:hover { background-color: #0066E7;}
+.contact {
+    border-bottom: 5px solid #0a8062;
+    background-image: linear-gradient(to top, #0a8062 50%, black 50%);
+}
+.contact:hover { background-color: #0a8062;}
+
+
+</style>
+
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+          <li class="home"><a href="/admindash">Dashboard</a></li>
+          <li class="admin"><a href="/registerteacher">Add Faculty</a></li>
+          <li class="about"><a href="/studentregister">Add Student</a></li>
+          <li class="student"><a href="/studentexcel">Add Student [Excel]</a></li>
+          <li class="teacher"><a href="/addelective">Add Elective</a></li>
+          <li class="student"><a href="/adminelective">Manage Elective</a></li>
+          <li class="about"><a href="/selectstudent">Select Student</a></li>
+          <li class="admin"><a href="/querypageadmin">Answer Query</a></li>
+          <li class="home"><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+  </header> 
+ 
+<div class="container">
+ 
+  <h2>Admin access to Query Page</h2>
+ 
+  <div class="accordion">
+    <!-- <div class="accordion-item">
+      <a>How a student can register for the electives ?</a>
+      <div class="content">
+        <p>The student can enroll themselves in any elective by logging into their student portal and applying for that particular elective.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a> How to edit my profile as a student?</a>
+      <div class="content">
+        <p>The student can login in into their dashboard and can click on edit profile to make the changes.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>Last date of registration </a>
+      <div class="content">
+        <p>The last date of registration is decided by the course instructor and after that date no changes are possible.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <a>I am having some trouble with the application.</a>
+      <div class="content">
+        <p>Contact administration at admin@iiita.ac.in for any other application related query or compatibility.</p>
+      </div>
+    </div> -->
+    <div class="accordion-item">
+      <!-- <a> <%=newListItem %> </a> -->
+      <form action="/querypageadmin" method="post" name="myform" >
+    <%  for (var i = 0 ; i < newListItem.length ; i++){   %>
+        <a><%=newListItem[i].question %></a>  
+        <div class="content">
+          <!-- <p><%=newListItem[i].answer %></p> -->
+          <textarea style="font-size: 20px;" rows="4" cols="70" type="text" name = <%=newListItem[i].quesid %> ><%= newListItem[i].answer %></textarea>
+        </div>
+        <!-- <label style=""for="cars">Choose an option:</label>
+        <select style="margin-top: 10px;margin-bottom: 20px;font-size: 16px;" name="go" id="go">
+        <option value="Answer">Answer</option>
+        <option value="Modify">Modify</option>
+        </select> -->
+   <%   }      %> 
+   <button style="background-color: green;color:white;padding: 12px 28px;font-size: 24px;margin-top: 10px;" type="submit" name="button" >Update</button>
+  </form>
+    </div>
+    <!--<div class="accordion-item">
+      <a>.......................................</a>
+      <div class="content">
+        <p>--Blank--</p>
+      </div>
+    </div>
+  </div> -->
+  <!-- <form action="/querypageadmin" method = "post" >
+  <textarea style="font-size: 20px;" rows="4" cols="70" type="text" name = newitem ></textarea>
+  
+</form> -->
+  <!-- <button type="button">Answer Question</button> -->
+  
+</div>
+ 
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+<script type="text/javascript">
+	const items = document.querySelectorAll(".accordion a");
+
+function toggleAccordion(){
+  this.classList.toggle('active');
+  this.nextElementSibling.classList.toggle('active');
+}
+
+items.forEach(item => item.addEventListener('click', toggleAccordion));
+</script>
+<!-- <script  src="function.js"></script> -->
+ 
+</body>
+</html>
