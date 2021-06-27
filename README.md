@@ -16,6 +16,6 @@ We have to implement in the perspective of three types of users :
 <li>Admin </li>
 <li>Teacher </li>
 <li>Students. </li>
-<ul>
+</ul>
 Admin is just a root user to manage the account details of other users. The teacher should generate the respective elective courses for the students. For each student based on their background (results, stream, etc.), the available elective courses should be listed.
 
